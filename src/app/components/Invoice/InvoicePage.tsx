@@ -2,15 +2,15 @@
 
 import React, { useRef, useState } from "react";
 import invoiceData from "./InvoiceData.json";
-import FromTo from "./Form1";
 import Form1 from "./Form1";
 import Form4 from "./Form4";
 import Form5 from "./Form5";
 import Form2 from "./Form2";
 import Form3 from "./Form3";
 import InvoiceFormNav from "./InvoiceFormNav";
-import Template1 from "../Templates/Template1";
 import SaveButton from "./SaveButton";
+import Template1 from "../Templates/Template1";
+import Template2 from "../Templates/Template2";
 
 export default function InvoiceForm() {
   const [currentSection, setCurrentSection] = useState(0);
@@ -197,7 +197,7 @@ export default function InvoiceForm() {
 export function LivePreview(props:any){
   return(
     <div ref={props.refID} className={`md:w-1/2 p-4 bg-white text-gray-900'}`} id="invoice-view">
-        <Template1 invoiceData={props.formData} />
+        <Template2 invoiceData={props.formData} />
       </div>
   );
 }

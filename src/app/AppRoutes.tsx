@@ -45,9 +45,9 @@ const AppRoutes = () => {
 
 const ProtectedRoute = () => {
   return (
-    <div>
+    <div className="flex flex-col h-screen justify-between">
       <Header />
-      <div className="h-screen dark:text-white dark:bg-gray-900 bg-gray-200">
+      <div className="dark:text-white dark:bg-gray-900 bg-gray-200">
         <Outlet />
       </div>
       <Footer />

@@ -1,39 +1,21 @@
 import { useEffect, useState } from "react";
 
 export default function Form4(props: any) {
-  const [formData, setFormData] = useState({
-    taxDetails: {
-      amount: 0,
-      amountType: "amount",
-      taxID: "",
-    },
-    discountDetails: {
-      amount: 0,
-      amountType: "amount",
-    },
-    shippingDetails: {
-      cost: 0,
-      costType: "amount",
-    },
-    paymentInformation: {
-      bankName: "",
-      accountName: "",
-      accountNumber: "",
-    },
-  });
+  const formData = props.formData;
+//   const [formData, setFormData] = useState(formData1);
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
     const parsedValue =
       name === "shippingDetails.cost" ? parseFloat(value) : value;
 
-    setFormData((prevFormData: any) => ({
-      ...prevFormData,
-      [name.split(".")[0]]: {
-        ...prevFormData[name.split(".")[0]],
-        [name.split(".")[1]]: parsedValue,
-      },
-    }));
+    // setFormData((prevFormData: any) => ({
+    //   ...prevFormData,
+    //   [name.split(".")[0]]: {
+    //     ...prevFormData[name.split(".")[0]],
+    //     [name.split(".")[1]]: parsedValue,
+    //   },
+    // }));
   };
   useEffect(() => {
     props.handleInputChange(
@@ -49,7 +31,12 @@ export default function Form4(props: any) {
       "details"
     );
     props.handleInputChange(
-      { target: { name: "shippingDetails", value: formData.shippingDetails } },
+      {
+        target: {
+          name: "paymentInformation",
+          value: formData.paymentInformation,
+        },
+      },
       "details"
     );
   }, [formData]);

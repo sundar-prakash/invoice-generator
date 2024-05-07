@@ -3,7 +3,6 @@ import { useReactToPrint } from "react-to-print";
 const SaveButton = (props: any) => {
   const formData = props.formData;
   const PdfRef = props.eleRef;
-  console.log(PdfRef.current);
 
   //   const handleSave = () => {
   //     const input = PdfRef.current;

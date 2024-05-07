@@ -55,20 +55,22 @@ export default function Form5(props: any) {
       { target: { name: "subTotal", value: subtotal } },
       "details"
     );
-    console.log(convertStringToDate(formData.details.invoiceDate));
-if(formData.details.invoiceNumber==""){
-    handleInputChange(
-      {
-        target: {
-          name: "invoiceNumber",
-          value: generateInvoiceString(
-            new Date(2022, 4, 31),
-            formData.receiver.name
-          ),
+    if (formData.details.invoiceNumber == "") {
+      handleInputChange(
+        {
+          target: {
+            name: "invoiceNumber",
+            value: generateInvoiceString(
+              formData.details.invoiceDate != ""
+                ? convertStringToDate(formData.details.invoiceDate)
+                : new Date(),
+              formData.receiver.name
+            ),
+          },
         },
-      },
-      "details"
-    );}
+        "details"
+      );
+    }
     return totalAmount;
   };
   useEffect(() => {
@@ -91,7 +93,6 @@ if(formData.details.invoiceNumber==""){
         <input
           type="text"
           required
-
           name="paymentTerms"
           value={formData.details.paymentTerms}
           onChange={(e) => handleInputChange(e, "details")}
@@ -116,7 +117,6 @@ if(formData.details.invoiceNumber==""){
         Subtotal:
         <input
           type="number"
-          
           name="subTotal"
           value={formData.details.subTotal}
           onChange={(e) => handleInputChange(e, "subTotal")}

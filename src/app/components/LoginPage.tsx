@@ -21,7 +21,7 @@ const LoginPage = () => {
 
     if (isPasswordCorrect) {
       sessionStorage.setItem("fail", hashedInputPassword);
-      window.location.reload();
+      window.location.href= "/";
     } else {
       alert("Invalid password. Please try again.");
     }

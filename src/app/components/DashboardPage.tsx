@@ -1,3 +1,3 @@
 export default function DashboardPage() {
-    return <h1 className="text-3xl font-bold underline">Dashboard world!</h1>;
+    return <h1 className="h-screen text-3xl font-bold underline">Welcome ZB!</h1>;
   }

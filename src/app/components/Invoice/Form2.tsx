@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Form2 = (props: any) => {
-    const formData = props.formData;
+  const formData = props.formData;
   const handleInputChange = props.handleInputChange;
 
   return (
@@ -9,19 +9,19 @@ const Form2 = (props: any) => {
       <h2 className="text-lg font-bold mb-2">Invoice Details</h2>
       <div className="grid grid-cols-1 gap-4">
         <div>
-        <label className="block dark:text-gray-300 text-gray-700">
-        Bill Type:
-        <select
-          name="type"
-          value={formData.details.type}
-          onChange={(e) => handleInputChange(e, "details")}
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
-        >
-          <option value={"Invoice"}>Invoice</option>
-          <option value={"Quote"}>Quote</option>
-          <option value={"Bill"}>Bill</option>
-        </select>
-      </label>
+          <label className="block dark:text-gray-300 text-gray-700">
+            Bill Type:
+            <select
+              name="type"
+              value={formData.details.type}
+              onChange={(e) => handleInputChange(e, "details")}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
+            >
+              <option value={"Invoice"}>Invoice</option>
+              <option value={"Quote"}>Quote</option>
+              <option value={"Bill"}>Bill</option>
+            </select>
+          </label>
           <label className="block dark:text-gray-300 text-gray-700">
             Invoice Logo:
             <input
@@ -29,9 +29,10 @@ const Form2 = (props: any) => {
               required
               name="invoiceLogo"
               value={formData.details.invoiceLogo}
-              onChange={(e) => handleInputChange(e, 'details')}
+              onChange={(e) => handleInputChange(e, "details")}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
             />
+            <span>Only URL !</span>
           </label>
         </div>
         <div>
@@ -43,7 +44,7 @@ const Form2 = (props: any) => {
               title="Leave it blank for auto-generation"
               name="invoiceNumber"
               value={formData.details.invoiceNumber}
-              onChange={(e) => handleInputChange(e, 'details')}
+              onChange={(e) => handleInputChange(e, "details")}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
             />
             <span>Leave it blank for auto-generation</span>
@@ -57,7 +58,7 @@ const Form2 = (props: any) => {
               type="date"
               name="invoiceDate"
               value={formData.details.invoiceDate}
-              onChange={(e) => handleInputChange(e, 'details')}
+              onChange={(e) => handleInputChange(e, "details")}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
             />
           </label>
@@ -70,7 +71,7 @@ const Form2 = (props: any) => {
               type="date"
               name="dueDate"
               value={formData.details.dueDate}
-              onChange={(e) => handleInputChange(e, 'details')}
+              onChange={(e) => handleInputChange(e, "details")}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
             />
           </label>
@@ -81,7 +82,7 @@ const Form2 = (props: any) => {
             <select
               name="currency"
               value={formData.details.currency}
-              onChange={(e) => handleInputChange(e, 'details')}
+              onChange={(e) => handleInputChange(e, "details")}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
             >
               <option value="INR">INR</option>
@@ -96,7 +97,7 @@ const Form2 = (props: any) => {
             <select
               name="language"
               value={formData.details.language}
-              onChange={(e) => handleInputChange(e, 'details')}
+              onChange={(e) => handleInputChange(e, "details")}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
             >
               <option value="English">English</option>
@@ -105,7 +106,6 @@ const Form2 = (props: any) => {
             </select>
           </label>
         </div>
-        
       </div>
     </div>
   );
