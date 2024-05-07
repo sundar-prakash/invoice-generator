@@ -26,6 +26,7 @@ const Form2 = (props: any) => {
             Invoice Logo:
             <input
               type="text"
+              required
               name="invoiceLogo"
               value={formData.details.invoiceLogo}
               onChange={(e) => handleInputChange(e, 'details')}
@@ -38,6 +39,7 @@ const Form2 = (props: any) => {
             Invoice Number:
             <input
               type="text"
+              required
               title="Leave it blank for auto-generation"
               name="invoiceNumber"
               value={formData.details.invoiceNumber}
@@ -51,6 +53,7 @@ const Form2 = (props: any) => {
           <label className="block dark:text-gray-300 text-gray-700">
             Invoice Date:
             <input
+              required
               type="date"
               name="invoiceDate"
               value={formData.details.invoiceDate}
@@ -63,6 +66,7 @@ const Form2 = (props: any) => {
           <label className="block dark:text-gray-300 text-gray-700">
             Due Date:
             <input
+              required
               type="date"
               name="dueDate"
               value={formData.details.dueDate}

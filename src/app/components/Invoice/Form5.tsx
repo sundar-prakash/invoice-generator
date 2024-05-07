@@ -90,6 +90,8 @@ if(formData.details.invoiceNumber==""){
         Payment Terms:
         <input
           type="text"
+          required
+
           name="paymentTerms"
           value={formData.details.paymentTerms}
           onChange={(e) => handleInputChange(e, "details")}
@@ -114,6 +116,7 @@ if(formData.details.invoiceNumber==""){
         Subtotal:
         <input
           type="number"
+          
           name="subTotal"
           value={formData.details.subTotal}
           onChange={(e) => handleInputChange(e, "subTotal")}

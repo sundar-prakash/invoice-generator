@@ -1,36 +1,31 @@
-import React, { useState } from "react";
-import { jsPDF } from "jspdf";
-import Template1 from "../Templates/Template1";
-import { LivePreview } from "./InvoicePage";
+import { useReactToPrint } from "react-to-print";
+
 const SaveButton = (props: any) => {
   const formData = props.formData;
-  const [showDropdown, setShowDropdown] = useState(false);
+  const PdfRef = props.eleRef;
+  console.log(PdfRef.current);
 
-  const handleSave = () => {
-        const divToPrint = document.getElementById('invoice-view')!;
-        
-        // Create a new window for printing
-        const newWindow = window.open('', '_blank')!;
-        
-        // Write the content of the div to the new window
-        newWindow.document.write(divToPrint.innerHTML);
-        
-        // Wait for the content to load
-        newWindow.document.addEventListener('DOMContentLoaded', () => {
-          // Print the content
-          newWindow.print();
-          
-          // Close the window after printing
-          newWindow.close();
-        });
-      
-      
-  };
+  //   const handleSave = () => {
+  //     const input = PdfRef.current;
+
+  //     html2canvas(input).then((canvas) => {
+  //       const imgData = canvas.toDataURL("image/png");
+  //       console.log(ImageData);
+  //       const doc = new jsPDF('p', 'mm', 'a4');
+  //       const componentWidth = doc.internal.pageSize.getWidth();
+  //       const componentHeight = doc.internal.pageSize.getHeight();
+  //       doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+  //       doc.save(`${formData.details.invoiceNumber}.pdf`);
+  //     });
+  //   };
+  const handlePrint = useReactToPrint({
+    content: () => PdfRef.current,
+  });
 
   return (
     <div className="relative inline-block">
       <button
-        onClick={handleSave}
+        onClick={handlePrint}
         className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md flex items-center"
       >
         <span className="mr-2">Save as PDF</span>

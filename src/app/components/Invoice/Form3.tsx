@@ -60,7 +60,8 @@ const Form3 = (props: any) => {
             <label className="w-1/2 block dark:text-gray-300 text-gray-700">
               Name:
               <input
-                type="text"
+              required
+              type="text"
                 name={`items[${index}].name`}
                 value={item.name}
                 onChange={(e) => handleItemInputChange(e, index, "name")}
@@ -72,7 +73,8 @@ const Form3 = (props: any) => {
             <label className="w-1/2 block dark:text-gray-300 text-gray-700">
               Description:
               <input
-                type="text"
+              required
+              type="text"
                 name={`items[${index}].description`}
                 value={item.description}
                 onChange={(e) => handleItemInputChange(e, index, "description")}
@@ -84,7 +86,8 @@ const Form3 = (props: any) => {
             <label className="w-1/2 block dark:text-gray-300 text-gray-700">
               Quantity:
               <input
-                type="number"
+              required
+              type="number"
                 name={`items[${index}].quantity`}
                 value={item.quantity}
                 onChange={(e) => handleItemInputChange(e, index, "quantity")}
@@ -96,7 +99,8 @@ const Form3 = (props: any) => {
             <label className="w-1/2 block dark:text-gray-300 text-gray-700">
               Unit Price:
               <input
-                type="number"
+              required
+              type="number"
                 name={`items[${index}].unitPrice`}
                 value={item.unitPrice}
                 onChange={(e) => handleItemInputChange(e, index, "unitPrice")}

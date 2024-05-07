@@ -4,7 +4,7 @@ const Template1 = ({ invoiceData }:any) => {
   const { sender, receiver, details } = invoiceData;
 
   return (
-    <div className="p-4 dark:bg-gray-900 bg-gray-100">
+    <div className="p-4 outline outline-1 text-black">
       <div className="flex justify-between mb-4">
         <div>
           <h2 className="text-lg font-bold">{sender.name}</h2>

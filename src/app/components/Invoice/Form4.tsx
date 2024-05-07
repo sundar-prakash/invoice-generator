@@ -66,6 +66,7 @@ export default function Form4(props: any) {
           <label className="block dark:text-gray-300 text-gray-700">
             Amount:
             <input
+              required
               type="number"
               name="taxDetails.amount"
               value={formData.taxDetails.amount}
@@ -102,6 +103,7 @@ export default function Form4(props: any) {
           <label className="block dark:text-gray-300 text-gray-700">
             Amount:
             <input
+              required
               type="number"
               name="discountDetails.amount"
               value={formData.discountDetails.amount}
@@ -128,6 +130,7 @@ export default function Form4(props: any) {
           <label className="block dark:text-gray-300 text-gray-700">
             Cost:
             <input
+              required
               type="number"
               name="shippingDetails.cost"
               value={formData.shippingDetails.cost}
@@ -154,6 +157,7 @@ export default function Form4(props: any) {
           <label className="block dark:text-gray-300 text-gray-700">
             Bank Name:
             <input
+              required
               type="text"
               name="paymentInformation.bankName"
               value={formData.paymentInformation.bankName}
@@ -175,6 +179,7 @@ export default function Form4(props: any) {
             Account Number:
             <input
               type="text"
+              required
               name="paymentInformation.accountNumber"
               value={formData.paymentInformation.accountNumber}
               onChange={handleInputChange}

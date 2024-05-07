@@ -1,6 +1,6 @@
 // InvoiceForm.tsx
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import invoiceData from "./InvoiceData.json";
 import FromTo from "./Form1";
 import Form1 from "./Form1";
@@ -15,6 +15,8 @@ import SaveButton from "./SaveButton";
 export default function InvoiceForm() {
   const [currentSection, setCurrentSection] = useState(0);
   const [formData, setFormData] = useState(invoiceData);
+  const PdfRef= useRef();
+
 
   const handleNextSection = () => {
     setCurrentSection(currentSection + 1);
@@ -181,20 +183,20 @@ export default function InvoiceForm() {
               </button>
             )}
             {currentSection === 4 && (
-              <SaveButton formData={formData}/>
+              <SaveButton eleRef={PdfRef} formData={formData}/>
             )}
           </div>
         </div>
       </div>
 
       {/* Live Preview Section */}
-      <LivePreview formData={formData} />
+      <LivePreview refID={PdfRef} formData={formData} />
     </div>
   );
 }
 export function LivePreview(props:any){
   return(
-    <div className={`md:w-1/2 p-4 dark:bg-gray-700 bg-gray-100'}`} id="invoice-view">
+    <div ref={props.refID} className={`md:w-1/2 p-4 bg-white text-gray-900'}`} id="invoice-view">
         <Template1 invoiceData={props.formData} />
       </div>
   );
