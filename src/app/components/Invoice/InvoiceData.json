@@ -1,0 +1,64 @@
+{
+    "sender": {
+      "name": "",
+      "address": "",
+      "zipCode": "",
+      "city": "",
+      "country": "",
+      "email": "",
+      "phone": "",
+      "customInputs": []
+    },
+    "receiver": {
+      "name": "",
+      "address": "",
+      "zipCode": "",
+      "city": "",
+      "country": "",
+      "email": "",
+      "phone": "",
+      "customInputs": []
+    },
+    "details": {
+      "invoiceLogo": "",
+      "type":"Invoice",
+      "invoiceNumber": "",
+      "invoiceDate": "",
+      "dueDate": "",
+      "items": [
+        {
+          "name": "",
+          "description": "",
+          "quantity": 0,
+          "unitPrice": 0,
+          "total": 0
+        }
+      ],
+      "currency": "INR",
+      "language": "English",
+      "taxDetails": {
+        "amount": 0,
+        "amountType": "amount",
+        "taxID": ""
+      },
+      "discountDetails": {
+        "amount": 0,
+        "amountType": "amount"
+      },
+      "shippingDetails": {
+        "cost": 0,
+        "costType": "amount"
+      },
+      "paymentInformation": {
+        "bankName": "",
+        "accountName": "",
+        "accountNumber": ""
+      },
+      "additionalNotes": "",
+      "paymentTerms": "",
+      "totalAmountInWords": "Zero",
+      "pdfTemplate": 1,
+      "subTotal": 0,
+      "totalAmount": 0
+    }
+  }
