@@ -5,7 +5,7 @@ const Form2 = (props: any) => {
   const handleInputChange = props.handleInputChange;
 
   return (
-    <div className=" p-4 dark:bg-gray-900 bg-gray-100">
+    <div className="p-4 dark:bg-gray-900 bg-gray-100">
       <h2 className="text-lg font-bold mb-2">Invoice Details</h2>
       <div className="grid grid-cols-1 gap-4">
         <div>
@@ -32,7 +32,44 @@ const Form2 = (props: any) => {
               onChange={(e) => handleInputChange(e, "details")}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
             />
-            <span>Only URL !</span>
+            <span>Only URL!</span>
+          </label>
+          <label className="block dark:text-gray-300 text-gray-700">
+            Header Color: <span>{formData.details.companyColor}</span>
+            <input
+              type="color"
+              name="companyColor"
+              value={formData.details.companyColor}
+              onChange={(e) => handleInputChange(e, "details")}
+              className="w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
+            />
+            
+          </label>
+          <label className="block dark:text-gray-300 text-gray-700">
+            Logo Size: <span>{formData.details.logoSize}</span>px
+            <input
+              type="range"
+              name="logoSize"
+              min="0"
+              max="150"
+              value={formData.details.logoSize}
+              onChange={(e) => handleInputChange(e, "details")}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
+            />
+            
+          </label>
+          <label className="block dark:text-gray-300 text-gray-700">
+            Border: <span>{formData.details.border}</span>px
+            <input
+              type="range"
+              name="border"
+              min="0"
+              max="5"
+              value={formData.details.border}
+              onChange={(e) => handleInputChange(e, "details")}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:text-white"
+            />
+            
           </label>
         </div>
         <div>

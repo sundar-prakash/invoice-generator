@@ -17,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between flex-wrap p-6 text-gray-700 dark:text-white dark:bg-gray-800">
+    <nav className="flex items-center bg-orange-50 justify-between flex-wrap p-6 text-gray-700 dark:text-white dark:bg-gray-800">
       <div className="flex items-center flex-shrink-0  mr-6 md:mr-16">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="./logo.png" className="h-8" alt="Flowbite Logo" />

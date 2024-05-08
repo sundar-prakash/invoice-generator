@@ -21,6 +21,9 @@
     },
     "details": {
       "invoiceLogo": "",
+      "companyColor":"#E19E25",
+      "logoSize":"20",
+      "border":"2",
       "type":"Invoice",
       "invoiceNumber": "",
       "invoiceDate": "",
